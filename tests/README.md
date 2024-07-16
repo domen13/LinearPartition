@@ -142,3 +142,31 @@ LinearPartition (c)       0 failures
 LinearPartition (v)       41 failures
 LinearPartition (e)       0 failures
 ````
+
+## Solution
+
+Changing `<float>` to `<double>` in `Contrafold.cpp:121` seems to solve the issue!
+
+````
+***** EternaFold (<double>) *****
+
+  i      j       p_ij
+  571    613     0.00448648
+  571    615     8.47856e-05
+  571    616     0.993935
+  571    618     1.84115e-05
+---------------------------
+  p_571 = 0.9985246771 
+
+  i      j       p_ij
+  572    612     0.00448534
+  572    613     1.95924e-05
+  572    615     0.992924
+  572    616     1.97649e-05
+---------------------------
+  p_572 = 0.9974486973000001 
+
+
+Corrupted i:   []
+Corrupted p_i:  [] 
+
