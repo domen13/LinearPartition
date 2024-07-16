@@ -5,15 +5,16 @@ import os
 import glob
 from collections import defaultdict
 
+# Testing parameters
+num_sequences = 100
+L = 1000
+
 algos = {
     'EternaFold': 'eternafold', 
     'LinearPartition (c)': 'linearpartition_c', 
     'LinearPartition (v)': 'linearpartition_v', 
     'LinearPartition (e)': 'linearpartition_e'
 }
-
-num_sequences = 5
-L = 300
 
 print(f'Testing {num_sequences} sequences with length {L} ...')
 

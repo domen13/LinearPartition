@@ -9,14 +9,27 @@ The main goal of these tests is to determine the source of a [bug](https://githu
 2. LinearPartition with ViennaRNA parameters
 2. LinearPartition with EternaFold parameters
 
-We tested a short MS2 sequence and randomly generated sequences to determine which methods produce corrupted pairing probabilities.
+We tested a partial MS2 sequence ($L=836$) and randomly generated sequences to determine which methods produce corrupted pairing probabilities.
 
 ## Running the tests
-1. Clone this [LinearPartition fork](https://github.com/domen13/LinearPartition) with `make`.
-2. Clone and compile [EternaFold](https://github.com/eternagame/EternaFold) with `make`.
-3. Set the EternaFold path `ETERNAFOLDPATH` in `MS2_benchmark`.
+1. Clone and compile this LinearPartition fork:
+````
+git clone https://github.com/domen13/LinearPartition
+cd LinearPartition
+git checkout eternafold_patch
+make
+````
+2. Clone and compile EternaFold:
+````
+cd ..
+git clone https://github.com/eternagame/EternaFold
+cd EternaFold
+make
+````
+
+3. If needed, change the EternaFold path (`ETERNAFOLDPATH`) in `fold`.
 5. Run `python MS2_analysis.py`.
-5. Run `python random_analysis.py`.
+5. Set desired testing parameters in `random_analysis.py` (`num_sequences` and `L`) and run `python random_analysis.py`.
 
 
 ## MS2 results
@@ -100,3 +113,30 @@ Corrupted p_i:  []
 ````
 
 ## Random sequences results
+
+### $L=50$
+````
+Tested 100 sequences with length 50
+EternaFold                0 failures
+LinearPartition (c)       0 failures
+LinearPartition (v)       0 failures
+LinearPartition (e)       0 failures
+````
+
+### $L=500$
+````
+Tested 100 sequences with length 500
+EternaFold                3 failures
+LinearPartition (c)       0 failures
+LinearPartition (v)       10 failures
+LinearPartition (e)       0 failures
+````
+
+### $L=1000$
+````
+Tested 100 sequences with length 1000
+EternaFold                24 failures
+LinearPartition (c)       0 failures
+LinearPartition (v)       41 failures
+LinearPartition (e)       0 failures
+````
