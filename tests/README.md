@@ -114,6 +114,8 @@ Corrupted p_i:  []
 
 ## Random sequences results
 
+Results show that we weren't able to get corrupted probabilities with either `LinearPartition (c)` or `LinearPartition (e)`, while both `EternaFold` and `LinearPartition (v)` give corrupted probabilities (and their occurrence seems to increase with the sequence length).
+
 ### $L=50$
 ````
 Tested 100 sequences with length 50
