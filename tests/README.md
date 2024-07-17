@@ -181,4 +181,6 @@ EternaFold (double)       0 failures
 
 Comparison between 5 different methods. $\Delta p_{ij}$ are calculated with respect to EternaFold.
 
+Note that `linearpartition_v` gives corrupted probabilities because it is compiled with [single-point arithmetics](https://github.com/LinearFold/LinearPartition/blob/b450fb3e63189073b68d385589035f992080aa3a/Makefile#L17) (`lpv` flag).
+
 ![Comparison](./MS2_comparison.png)
