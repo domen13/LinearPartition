@@ -145,7 +145,7 @@ LinearPartition (e)       0 failures
 
 ## Solution
 
-Changing `<float>` to `<double>` in `Contrafold.cpp:121` seems to solve the issue!
+Changing `<float>` to `<double>` in `Contrafold.cpp:121` seems to solve the issue.
 
 ````
 ***** EternaFold (<double>) *****
@@ -169,4 +169,16 @@ Changing `<float>` to `<double>` in `Contrafold.cpp:121` seems to solve the issu
 
 Corrupted i:   []
 Corrupted p_i:  [] 
+````
 
+### Test on random sequences
+````
+Tested 100 sequences with length 1000
+EternaFold (double)       0 failures
+````
+
+### Pairing probability matrix comparison for MS2
+
+Comparison between 5 different methods. $\Delta p_{ij}$ are calculated with respect to EternaFold.
+
+![Comparison](./MS2_comparison.png)
